@@ -11,7 +11,7 @@ class ColorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Color Change Bloc'),
+        title: const Text('Color Change Bloc'),
       ),
       body: Center(
         child: Column(
@@ -21,7 +21,7 @@ class ColorsScreen extends StatelessWidget {
               builder: (context, state) {
                 return Container(
                   height: 100,
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   color: state.bloccolor,
                 );
               },
@@ -30,14 +30,14 @@ class ColorsScreen extends StatelessWidget {
               onPressed: () {
                 context.read<ContainerColorBloc>().add(ContainerRedEvent());
               },
-              child: Text('Change Color to Red'),
+              child: const Text('Change Color to Red'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 context.read<ContainerColorBloc>().add(ContainerYellowEvent());
               },
-              child: Text('Change Color to Yellow'),
+              child: const Text('Change Color to Yellow'),
             ),
           ],
         ),

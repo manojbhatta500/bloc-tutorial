@@ -11,7 +11,7 @@ class CounterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter App'),
+        title: const Text('Counter App'),
       ),
       body: Center(
         child: Column(
@@ -21,7 +21,7 @@ class CounterScreen extends StatelessWidget {
               builder: (context, state) {
                 return Text(
                   state.counter.toString(),
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
             ),
@@ -35,14 +35,14 @@ class CounterScreen extends StatelessWidget {
             onPressed: () {
               context.read<CounterBloc>().add(CounterIncreasedEvent());
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () {
               context.read<CounterBloc>().add(CounterDecresedEvent());
             },
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove),
           ),
         ],
       ),

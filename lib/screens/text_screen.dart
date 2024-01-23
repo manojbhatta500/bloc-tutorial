@@ -12,7 +12,7 @@ class TextScreen extends StatelessWidget {
     final TextEditingController textController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Text Field App'),
+        title: const Text('Text Field App'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -21,26 +21,26 @@ class TextScreen extends StatelessWidget {
           children: [
             TextField(
               controller: textController,
-              decoration: InputDecoration(labelText: 'Enter Text'),
+              decoration: const InputDecoration(labelText: 'Enter Text'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 context
                     .read<TextBloc>()
                     .add(UpdateTextEvent(getstring: textController.text));
               },
-              child: Text(
+              child: const Text(
                 'fetch text',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             BlocBuilder<TextBloc, TextState>(
               builder: (context, state) {
                 return Text(
                   state.textdata.toString(),
-                  style: TextStyle(fontSize: 20, color: Colors.blue),
+                  style: const TextStyle(fontSize: 20, color: Colors.blue),
                 );
               },
             ),

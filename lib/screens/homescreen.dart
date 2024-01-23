@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Text Field App'),
+        title: const Text('Text Field App'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -21,21 +21,21 @@ class HomeScreen extends StatelessWidget {
             GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CounterScreen()));
+                      MaterialPageRoute(builder: (context) => const CounterScreen()));
                 },
                 child: GotoButton(title: 'Counter Example')),
 
             GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ColorsScreen()));
+                      MaterialPageRoute(builder: (context) => const ColorsScreen()));
                 },
                 child: GotoButton(title: 'Color Example')),
 
             GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TextScreen()));
+                      MaterialPageRoute(builder: (context) => const TextScreen()));
                 },
                 child: GotoButton(title: 'Text Example')),
 
